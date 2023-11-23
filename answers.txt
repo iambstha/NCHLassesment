@@ -1,0 +1,26 @@
+NCHL Screening Test Answers
+
+All these answers are available in the same project repository within the root folder with a file named answers.txt
+—--------------------------------------------------------------------------
+#### Q.4. Discuss your approach to selecting the appropriate data structure or algorithm for a specific problem in Java. Provide an example where your choice significantly impacted the efficiency or effectiveness of the solution.
+
+Ans=> Selecting the appropriate data structure and algorithm is a critical aspect of software development. In my opinion, the decision-making process revolves around two primary considerations: understanding the project requirements and evaluating the time and space complexity implications.
+In the context of an IoT project, where the objective was to develop a RESTful API for efficient storage and retrieval of sensor data points, the choice of data structure and algorithm was crucial. 
+Given the high volume of sensor data, the optimization of the codebase related to queries was huge . While the initial recommendation was to utilise a time-series database like InfluxDB, my team and I decided to go with PostgreSQL because that seemed more familiar for us. However, we know that adopting a time-series database environment will be crucial while scaling this project and we are continuously improving the codebase. 
+In our implementation, we structured the data models and schemas to align with time-series principles, utilising the timestamp as a critical factor. This decision allowed us to maintain the efficiency required for handling large datasets. This experience proved the importance of understanding project requirements and leveraging the available team expertise.
+
+#### Q.5. Share your perspective on the judicious use of exceptions in Java applications. Describe a scenario where a well-structured exception strategy enhanced code robustness and maintainability.
+Ans=> In Java applications, judicious use of exceptions is pivotal for code robustness and maintainability. 
+
+For the past few weeks, I have been working on making my code more robust and efficient. In order to fulfil the project requirement, I got more engaged in building codeblocks that handle errors and exceptions correctly.
+
+Once, while testing the api, I came across an issue where sometime, the timestamp format that an ESP32 device was sending in the HTTP body was incorrect and the issue kept the api from working. To address this issue, I used an exception handling mechanism to build a fault proof api. This was not the only case where I used an exception handling mechanism in my codebase. I got to know the use of separate exception handling classes that extended the built in exception classes like IOExceptions, etc. I also got to add the database connectivity exception handling code to prevent any database related errors and exceptions. I delved into builtin exception classes and learned how to implement custom exception classes that extended the built in exception class in java.
+
+The result was a more resilient and maintainable codebase, showing the crucial role of a well-structured exception strategy in real-world applications.
+
+#### Q.8. When working with dependencies in Java, what factors guide your choice between different dependency management tools or frameworks? Share an experience where efficient dependency management positively influenced a project.
+Ans=> In my IoT project, I used Maven as the dependency management tool because of its ease of configuration within my project, also minimising the efforts that I had to go through to set up my project and share across teams. The centralised dependency repository of Maven provided a way of proper versioning of my project.
+Also, the clarity that Maven provided that included proper versioning and definition allowed me to optimise the project on various devices easily and more efficiently.
+Choosing Maven for this project helped my project to ensure version consistency and also ease with project build mechanism.
+This streamlined workflow contributed to a robust, scalable, and adaptable IoT application.
+
